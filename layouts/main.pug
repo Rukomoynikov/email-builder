@@ -3,4 +3,55 @@ html
     link(rel="stylesheet", href="../styles/main.css")
     block title
   body
-    block content
+    div(align='center')
+      table.mainContainer(cellpadding='0' cellspacing='0')
+        tbody
+          tr
+            td.greyBorder
+            td(bgcolor='#ebebeb' colspan='3' height='48' width='700' style='font-size:1px;line-height:1px;')
+            td.greyBorder
+          tr
+            td.greyBorder
+            td(bgcolor='#ffffff' colspan='3' width='700')
+              img(alt='' border='0' height='3' src='https://www.zdrav.ru/images/email/automail_demo_bss_top-border.png' style='display: block; outline: none; border: none; text-decoration: none;' width='700')
+            td.greyBorder
+          tr
+            td.greyBorder
+            td(bgcolor='#cdc4ae' width='1' style='font-size:1px;line-height:1px;')
+            td(bgcolor='#ffffff' valign='top' width='698')
+              block content
+            td(bgcolor='#cdc4ae' width='1' style='font-size: 1px; line-height: 1px;')
+            td.greyBorder
+          tr
+            td.greyBorder
+            td(bgcolor='#ffffff' colspan='3' width='700')
+              img(alt='' border='0' height='3' src='https://www.zdrav.ru/images/email/automail_demo_bss_bottom-border.png' style='display: block; outline: none; border: none; text-decoration: none;' width='700')
+            td.greyBorder
+      tr
+        td.greyBorder
+        td(bgcolor='#ebebeb' colspan='3' height='48' width='700')
+          // contacts
+          table(align='center' border='0' cellpadding='0' cellspacing='0' style='margin: 0; padding: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;')
+            tbody
+              tr
+                td(bgcolor='#ebebeb' rowspan='5' style='font-size: 1px; line-height: 1px;' width='68')
+                td(bgcolor='#ebebeb' height='22' style='font-size: 1px; line-height: 1px;' width='586')
+                td(bgcolor='#ebebeb' rowspan='5' style='font-size: 1px; line-height: 1px;' width='46')
+              tr
+                td(bgcolor='#ebebeb' style='font-size: 14px; font-weight: normal; line-height: 24px; color: #877f6b; font-family: Arial,sans-serif;' valign='top' width='586')
+                  font(face='Arial, sans-serif' style='color: #877f6b;')
+                    | Подробнее о СС «Экономика ЛПУ» Вам с удовольствием расскажут наши сотрудники по телефону единой справочной службы
+              tr
+                td(bgcolor='#ebebeb' style='font-size: 30px; font-weight: normal; line-height: 20px; color: #877f6b; font-family: Arial,sans-serif;' valign='top' width='586')
+                  font(face='Arial, sans-serif' style='color: #877f6b;')
+                    | 8 (495) 933-63-22
+                  span(style="font-size: 12px")
+                    | с 9 до 18 по Москве
+                    br
+                    | Уважаемый пользователь! Вы получили это письмо в связи с оформлением демодоступа на сайте vip.1elpu.ru.Ваш доступ к сайту действителен 3 дня.
+                    br
+                    | Это письмо является автоматическим и отправляется один раз. Если письмо попало к вам по ошибке или его содержимое Вас не интересует - пожалуйста, удалите его или отпишитесь.
+              tr
+                td(bgcolor='#ebebeb' height='12' style='font-size: 1px; line-height: 1px;' width='586')
+        td.greyBorder
+  img(src='[[=Message.Parameters.PixelStat;]]' alt='' width='1' height='1' border='0' style='display: block; outline: none; border: none; text-decoration: none;')
