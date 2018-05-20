@@ -2,19 +2,34 @@ var gulp = require('gulp')
 var pug = require('gulp-pug');
 var inlineCss = require('gulp-inline-css');
 var gls = require('gulp-live-server');
+var plumber = require('gulp-plumber');
+var notify = require("gulp-notify");
+
+var onError = function (err) {
+  notify({
+       title: 'Gulp Task Error',
+       message: 'Check the console.'
+   }).write(err);
+
+   console.log(err.toString());
+   
+   this.emit('end');
+}
 
 gulp.task('views', function buildHTML() {
   return gulp.src('emails/*.pug')
   .pipe(pug({
     pretty: true
   }))
+  .on('error', onError)
   .pipe(gulp.dest('build'))
 });
  
 gulp.task('inline', function() {
   return gulp.src('build/*.html')
       .pipe(inlineCss())
-      .pipe(gulp.dest('build/'));
+      .on('error', onError)
+      .pipe(gulp.dest('build/'))
 });
 
 gulp.task('watch', function() {
