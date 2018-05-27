@@ -21,20 +21,22 @@ gulp.task('views', function buildHTML() {
   .pipe(pug({
     pretty: true
   }))
+  .pipe(inlineCss())
   .on('error', onError)
   .pipe(gulp.dest('build'))
 });
  
-gulp.task('inline', function() {
-  return gulp.src('build/*.html')
-      .pipe(inlineCss())
-      .on('error', onError)
-      .pipe(gulp.dest('build/'))
-});
 
 gulp.task('watch', function() {
-  gulp.watch(['emails/*.pug', 'layouts/*.pug', 'partials/*.pug'], ['views']);
-  gulp.watch('build/*.html', ['inline']);
+  gulp.watch(
+    [
+      'emails/*.pug', 
+      'layouts/*.pug', 
+      'partials/*.pug', 
+      'styles/*.css'
+    ], 
+    ['views']
+  );
 });
 
 gulp.task('serve', function() {
@@ -46,4 +48,4 @@ gulp.task('serve', function() {
   });
 });
 
-gulp.task('default', ['views', 'inline', 'watch', 'serve'])
+gulp.task('default', ['views', 'watch', 'serve'])

@@ -26,3 +26,4 @@ partials - готовые блоки
 styles - стили для писем
 ```
 
+local host находится по адресу http://localhost:3000
